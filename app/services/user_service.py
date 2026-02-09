@@ -58,11 +58,13 @@ def save(data):
         mycursor.execute(query_security, (user_id,
                                           data['hash_password']['salt'],
                                           data['hash_password']['hash']))
+    except UserWarning:
+        return 0
 
-    except TypeError:
-        # Rollback ensures no partial data is saved if an error occurs
-        mydb.rollback()
-        return 'ERROR.'
+    # except TypeError:
+    #     # Rollback ensures no partial data is saved if an error occurs
+    #     mydb.rollback()
+    #     return 'ERROR.'
 
     mydb.commit()
     mycursor.close()

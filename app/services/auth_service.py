@@ -36,6 +36,9 @@ data = {
     'card_number': None
 }
 
+def reg_data():
+    return data
+
 user_password = {
     "password": None
 }
@@ -131,7 +134,7 @@ def register(name: str = None, surname: str = None, birth_date: int = None, emai
 
                     data.update({'hash_password': hashed_password,
                                  'card_number': card_number})
-                    return "Your account has been successfully created."
+                return "Your account has been successfully created."
 
     except (NameError, SurnameError, EmailError, PhoneNumberError, AgeError, ValueError, NumberParseException):
         # Maps internal errors to clean user output

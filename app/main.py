@@ -14,7 +14,7 @@ Dependencies:
 
 from app.services.admin_functions import *
 from app.services.user_functions import *
-from app.services.auth_service import register
+from app.services.auth_service import register, reg_data
 from app.services.auth_service import login_admin
 from app.services.auth_service import login
 from app.services.user_service import save
@@ -91,7 +91,7 @@ while True:
         # Data is normalized to uppercase for email and names before saving
         result = register(name.upper(), surname.upper(), birth_date, email.upper(), phone)
         print(result)
-        print(save(result))
+        save(reg_data())
         break
 
     # --- SECTION 3: ADMINISTRATIVE PANEL ---
