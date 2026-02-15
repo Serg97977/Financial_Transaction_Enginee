@@ -54,22 +54,29 @@ def register(name: str = None, surname: str = None, birth_date: int = None, emai
     """
     try:
         # Step 1: Presence validation
-        if not name.strip(): raise NameError
-        if not surname.strip(): raise SurnameError
-        if not birth_date.strip(): raise BirthDayError
-        if not email.strip(): raise EmailError
-        if not phone.strip(): raise PhoneNumberError
+        if not str(name).strip():
+            raise NameError
+        if not str(surname).strip():
+            raise SurnameError
+        if not str(birth_date).strip():
+            raise BirthDayError
+        if not str(email).strip():
+            raise EmailError
+        if not str(phone).strip():
+            raise PhoneNumberError
 
         # Step 2: Character type validation
         for i in name:
             if i.isalpha() == False or len(name) > 15:
                 raise NameError
-        data.update({'name': name})
+            else:
+                data.update({'name': name})
 
         for i in surname:
             if i.isalpha() == False or len(surname) > 20:
                 raise SurnameError
-        data.update({'surname': surname})
+            else:
+                data.update({'surname': surname})
 
         # Step 3: Precise Age Calculation (Senior Approach)
         birth_day = datetime.strptime(birth_date, '%d-%m-%Y')
@@ -86,7 +93,7 @@ def register(name: str = None, surname: str = None, birth_date: int = None, emai
 
         # Step 4: Email Structural Validation (Regex)
         x = bool(re.search(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$', email))
-        if x == True:
+        if x is True:
             data.update({'email': email})
         else:
             raise EmailError
@@ -94,7 +101,7 @@ def register(name: str = None, surname: str = None, birth_date: int = None, emai
         # Step 5: Professional Phone Parsing (phonenumbers library)
         number = phonenumbers.parse(phone)
         is_valid = phonenumbers.is_valid_number(number)
-        if is_valid == False:
+        if is_valid is False:
             raise PhoneNumberError
         else:
             data.update({'phone': phone})
@@ -134,7 +141,7 @@ def register(name: str = None, surname: str = None, birth_date: int = None, emai
 
                     data.update({'hash_password': hashed_password,
                                  'card_number': card_number})
-                return "Your account has been successfully created."
+                    return "Your account has been successfully created."
 
     except (NameError, SurnameError, EmailError, PhoneNumberError, AgeError, ValueError, NumberParseException):
         # Maps internal errors to clean user output
@@ -216,3 +223,4 @@ def login_admin(email: str, admin_psw: str):
             return "Unsuccessful Login"
     except (EmailError, PasswordError):
         return "Incorrect credentials."
+    

@@ -91,8 +91,9 @@ while True:
         # Data is normalized to uppercase for email and names before saving
         result = register(name.upper(), surname.upper(), birth_date, email.upper(), phone)
         print(result)
-        save(reg_data())
-        break
+        if (result != "Registration failed: Invalid input provided."):
+            save(reg_data())
+            break
 
     # --- SECTION 3: ADMINISTRATIVE PANEL ---
     elif logining_creating == '3':
