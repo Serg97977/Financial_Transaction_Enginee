@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c78b6870-4809-466b-9db4-1f356c6fbc50" name="Changes" comment="There was a bug about creating account">
-      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/auth_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/auth_service.py" afterDir="false" />
-    </list>
+    <list default="true" id="c78b6870-4809-466b-9db4-1f356c6fbc50" name="Changes" comment="There was a bug about creating account" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,7 +68,31 @@
       <option name="project" value="LOCAL" />
       <updated>1770643252431</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="There was a bug about creating account">
+      <option name="closed" value="true" />
+      <created>1771171576450</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1771171576450</updated>
+    </task>
+    <task id="LOCAL-00003" summary="There was a bug about creating account">
+      <option name="closed" value="true" />
+      <created>1771171653078</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1771171653078</updated>
+    </task>
+    <task id="LOCAL-00004" summary="There was a bug about creating account">
+      <option name="closed" value="true" />
+      <created>1771171670855</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1771171670855</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
