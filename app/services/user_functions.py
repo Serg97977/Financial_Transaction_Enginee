@@ -57,7 +57,7 @@ def show_transaction_history():
         user_id = decoded_jwt['user_id']
         user_role = decoded_jwt['role']
 
-        if user_role == ('admin',) or user_id == None:
+        if user_role == ('admin',) or user_id is None:
             raise UserError
         else:
             mycursor = mydb.cursor()
