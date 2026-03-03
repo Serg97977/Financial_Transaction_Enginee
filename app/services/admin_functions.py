@@ -17,9 +17,8 @@ import re
 import phonenumbers
 from phonenumbers import NumberParseException
 from datetime import datetime, date
-
 from app.config import mydb
-from app.database import mycursor
+
 from app.services.possible_errors import (
     UserError,
     PhoneNumberError,

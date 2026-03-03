@@ -57,7 +57,7 @@ def show_transaction_history():
         user_id = decoded_jwt['user_id']
         user_role = decoded_jwt['role']
 
-        if user_role == ('admin',) or user_id == None:
+        if user_role == ('admin',) or user_id is None:
             raise UserError
         else:
             mycursor = mydb.cursor()
@@ -67,7 +67,10 @@ def show_transaction_history():
             mycursor.execute(transaction_history_query, (user_id,))
 
             transaction_history = mycursor.fetchall()
-            mycursor.close()
+            if not transaction_history:
+                raise UserError
+            else:
+                mycursor.close()
 
             # Note to dev: Fetches only the first entry; logic for multiple entries needed
             return (f"From your card :{transaction_history[0][0]}\n"
